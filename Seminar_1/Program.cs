@@ -25,7 +25,7 @@ namespace Seminar_1
 
             foreach (var item in ListStr)
             {
-                Console.Write(item + "!" );
+                Console.Write($"{item} !" );
             }
 
             // Второе задание Task11
@@ -35,11 +35,10 @@ namespace Seminar_1
             // Используем цикл foreach для перебора элементов
             foreach (var item in ListStr)
             {
-                Console.WriteLine("-" + item + "-");
+                Console.WriteLine($"- {item} -");
             }
 
             Console.ReadKey();
-
         }
     }
 }
