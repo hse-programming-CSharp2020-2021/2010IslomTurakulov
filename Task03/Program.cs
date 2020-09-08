@@ -7,7 +7,11 @@ namespace Task03
         static void Main(string[] args)
         {
             int n;
+
+            
             Console.WriteLine("Введите значения от 32 до 127: ");
+
+            // Проверяет диапазон от 32 до 127
 
             while (!int.TryParse(Console.ReadLine(), out n) || (n < 32) || (n >= 127))
             {
