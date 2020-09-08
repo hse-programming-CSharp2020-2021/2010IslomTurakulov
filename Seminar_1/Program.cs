@@ -9,6 +9,7 @@ namespace Seminar_1
         static void Main(string[] args)
         {
             string firstStr, secondStr, thirdStr;
+
             var ListStr = new List<string>();
 
             Console.WriteLine("Введите ваше слово");
@@ -20,16 +21,18 @@ namespace Seminar_1
             Console.WriteLine("Введите ваше третье слово");
             ListStr.Add(Console.ReadLine());
 
-            // Если сделать по легкому пути , то..
+            // Используем цикл Foreach для перебора элементов
 
             foreach (var item in ListStr)
             {
                 Console.Write(item + "!" );
             }
-            // Task11
+
+            // Второе задание Task11
 
             Console.WriteLine("\n");
 
+            // Используем цикл foreach для перебора элементов
             foreach (var item in ListStr)
             {
                 Console.WriteLine("-" + item + "-");
