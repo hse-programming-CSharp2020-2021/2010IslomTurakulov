@@ -8,7 +8,9 @@ namespace Task03
         {
             int n;
 
-            
+            char a1 = 'a';
+            Console.WriteLine(a1);
+
             Console.WriteLine("Введите значения от 32 до 127: ");
 
             // Проверяет диапазон от 32 до 127
