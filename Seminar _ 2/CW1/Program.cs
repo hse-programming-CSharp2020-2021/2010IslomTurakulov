@@ -33,7 +33,7 @@ namespace CW1
                     // Выдал значение a и отправляю в метод Fx()
                     Console.WriteLine($"Ответ: {Fx(a)}");
 
-                    Console.WriteLine("Нажмите (Y) для повтора ");
+                    Console.WriteLine("Нажмите (Y) для повтора программы ");
                     repeat = Console.ReadLine();
                 }
                 while ((repeat == "y") || (repeat == "Y"));
