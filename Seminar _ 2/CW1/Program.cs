@@ -27,11 +27,10 @@ namespace CW1
                     str = Console.ReadLine();
                 } while (!double.TryParse(str, out a));
 
-                // Выдал значение a и отправляю в метод
+                // Выдал значение a и отправляю в метод Fx()
                 Console.WriteLine($"Ответ: {Fx(a)}");
-
-                Console.WriteLine("Нажмите ENTER для выхода..");
-                Console.ReadKey();
+                Main(args);
+                
             }
             catch (Exception ex)
             {
