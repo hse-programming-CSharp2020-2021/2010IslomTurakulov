@@ -17,20 +17,27 @@ namespace CW1
             {
                 double a;
                 string str;
+                string repeat;
 
                 Console.WriteLine("Самостоятельная работа 1");
                 Console.WriteLine("Требования: Ввести значение x и вывести значение полинома");
                 // По желанию можно использовать if,else
                 do
                 {
-                    Console.WriteLine("Введите значение x: ");
-                    str = Console.ReadLine();
-                } while (!double.TryParse(str, out a));
+                    do
+                    {
+                        Console.WriteLine("Введите значение x: ");
+                        str = Console.ReadLine();
+                    } while (!double.TryParse(str, out a));
 
-                // Выдал значение a и отправляю в метод Fx()
-                Console.WriteLine($"Ответ: {Fx(a)}");
-                Main(args);
-                
+                    // Выдал значение a и отправляю в метод Fx()
+                    Console.WriteLine($"Ответ: {Fx(a)}");
+
+                    Console.WriteLine("Нажмите (Y) для повтора ");
+                    repeat = Console.ReadLine();
+                }
+                while ((repeat == "y") || (repeat == "Y"));
+
             }
             catch (Exception ex)
             {
