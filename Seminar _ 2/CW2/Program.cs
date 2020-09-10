@@ -6,7 +6,17 @@ namespace CW2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("");
+            try
+            {
+                int numValue;
+                Console.WriteLine("Введите трёхзначное число: ");
+                numValue = int.Parse(Console.ReadLine());
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
