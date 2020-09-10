@@ -5,6 +5,11 @@ namespace CW6
 {
     class Program
     {
+        /// <summary>
+        /// Конвертирует значение в рубли
+        /// </summary>
+        /// <param name="a">Бюджет пользователя</param>
+        /// <param name="b">Процент бюджета пользователя</param>
         static void Rub(ref double a, ref double b)
         {
             double result = (a * (b / 100));
@@ -12,12 +17,22 @@ namespace CW6
             Console.WriteLine(string.Format(new CultureInfo("ru-RU"), $"{result:c3}"));
     
         }
+        /// <summary>
+        /// Конвертирует значение в доллары
+        /// </summary>
+        /// <param name="a">Бюджет пользователя</param>
+        /// <param name="b">Процент бюджета пользователя</param>
         static void Dollar(ref double a, ref double b)
         {
             double result = ((a/72.1) * (b / 100));
             Console.Write("Выделено на компьютерные игры : ");
             Console.WriteLine(string.Format(new CultureInfo("en-US"), $"{result:c3}"));
         }
+        /// <summary>
+        /// Конвертирует значение в евро
+        /// </summary>
+        /// <param name="a">Бюджет пользователя</param>
+        /// <param name="b">Процент бюджета пользователя</param>
         static void Euro(ref double a, ref double b)
         {
             double result = ((a / 89.1) * (b / 100));
