@@ -7,18 +7,15 @@ namespace Task_3
         public static void SortValue(ref int x, ref int y, ref int z)
         {
             // Вспомогательные переменные
-            int a1, a2 , a3;
 
-            a1 = (x <= y) ? (z < x ? z : x) : (y < z ? y : z);
-            a3 = (x >= y) ? (z > x ? z : x) : (y > z ? y : z);
-            a2 = (z >= x) ? (x > y ? x : y) : (x < y ? x : y);
-
-            int min = a1;
-            int mid = a2;
-            int max = a3;
+            int minXY = Math.Min(x, y);
+            int maxXY = Math.Max(x, y);
+            int max = maxXY < z ? z : maxXY;
+            int min = minXY > z ? z : minXY;
+            int middle = maxXY == max && minXY == min ? z : x == min || x == max ? y : x;
 
             Console.WriteLine($"Минимальное значение: {min} ");
-            Console.WriteLine($"Среднее значение {mid} ");
+            Console.WriteLine($"Среднее значение {middle} ");
             Console.WriteLine($"Максимальное значение {max} ");
 
         }
