@@ -62,4 +62,3 @@ namespace Task_6
         }
     }
 }
-}
