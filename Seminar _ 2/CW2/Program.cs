@@ -31,6 +31,7 @@ namespace CW2
         }
         static void Main(string[] args)
         {
+            // Обработка исключений
             try
             {
                 do
@@ -44,7 +45,7 @@ namespace CW2
                 
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine($"Ошибка {ex.Message}");
             }
         }
     }
