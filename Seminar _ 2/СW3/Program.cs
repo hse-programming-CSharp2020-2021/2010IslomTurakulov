@@ -47,7 +47,7 @@ namespace СW3
             }
             catch (Exception ex)
             {
-                Console.WriteLine("\nВы ввели неккоректные данные");
+                Console.WriteLine("\nВы ввели неккоректные данные!");
                 Console.WriteLine(ex.Message);
             }
         }
