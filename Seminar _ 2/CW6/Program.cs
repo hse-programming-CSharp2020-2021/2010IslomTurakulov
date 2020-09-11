@@ -14,7 +14,7 @@ namespace CW6
         /// <param name="b">Процент бюджета пользователя</param>
         static void Rub(ref double a, ref double b)
         {
-            Console.OutputEncoding = Encoding.Unicode;
+            Console.OutputEncoding = Encoding.Unicode; //Используем кодировку чтобы валюта показывалась нормально
             double result = (a * (b / 100));
             Console.Write("Выделено на компьютерные игры : ");
             Console.WriteLine(string.Format(new CultureInfo("ru-RU"), "{0:c3}", result));
@@ -27,7 +27,7 @@ namespace CW6
         /// <param name="b">Процент бюджета пользователя</param>
         static void Dollar(ref double a, ref double b)
         {
-            Console.OutputEncoding = Encoding.Unicode;
+            Console.OutputEncoding = Encoding.Unicode; //Используем кодировку чтобы валюта показывалась нормально
             double result = ((a/72.1) * (b / 100));
             Console.Write("Выделено на компьютерные игры : ");
             Console.WriteLine(string.Format(new CultureInfo("en-US"), "{0:c3}", result));
@@ -39,7 +39,7 @@ namespace CW6
         /// <param name="b">Процент бюджета пользователя</param>
         static void Euro(ref double a, ref double b)
         {
-            Console.OutputEncoding = Encoding.Unicode;
+            Console.OutputEncoding = Encoding.Unicode; //Используем кодировку чтобы валюта показывалась нормально
             double result = ((a / 89.1) * (b / 100));
             Console.Write("Выделено на компьютерные игры : ");
             Console.WriteLine(string.Format(new CultureInfo("fr-FR"), "{0:c3}", result));
@@ -62,6 +62,7 @@ namespace CW6
 
                     Console.WriteLine("[0] - рубль, [1]- доллар, [2] - евро");
                     string currency = Console.ReadLine();
+                    // Можно было использовать if, else
                     switch (currency)
                     {
                         case "0":
