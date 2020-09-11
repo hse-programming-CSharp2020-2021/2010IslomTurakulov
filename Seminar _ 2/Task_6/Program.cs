@@ -56,8 +56,8 @@ namespace Task_6
                 ReadNumber(out y); 
 
                 RadiusChecker(x, y);
-
                 Console.WriteLine("Для выхода из программы нажмите ENTER.");
+
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }
     }

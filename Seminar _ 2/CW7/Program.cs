@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
+using System.Text;
+using System.Xml.Schema;
+
 /*
 * Написать программу с использованием двух методов. Первый метод возвращает дробную и целую часть числа. 
 * Второй метод возвращает квадрат и корень из числа. В основной программе пользователь вводит дробное число. 
@@ -10,38 +13,55 @@ namespace CW7
 {
     class Program
     {
-
+        /// <summary>
+        /// Дробная и целая часть
+        /// </summary>
+        /// <param name="doubleNumber">Дробное число</param>
         static void DoubleSplit(double doubleNumber)
         {
-            int fractLength = doubleNumber.ToString().Split(',')[1].Length;
-            Console.WriteLine();
-            (int)Math.Round(doubleNumber)
+            Console.WriteLine($"Дробная часть : {doubleNumber}");
+            Console.WriteLine($"Целая часть: {(int)Math.Round(doubleNumber)}");
         }
-        public int Fract
+        /// <summary>
+        /// Корень и квадрат числа
+        /// </summary>
+        /// <param name="doubleNumber"> Дробное число</param>
+        static void Fract(double doubleNumber)
         {
-            get { return (int)((doubleNumber - Int) * Math.Pow(10, fractLength)); }
+            Console.WriteLine($"Квадрат числа: {Math.Pow(doubleNumber, 2 ).ToString("F3")}");
+            Console.WriteLine($"Корень числа: {Math.Sqrt(doubleNumber).ToString("F3")}");
         }
-        public double Doub
+        /// <summary>
+        /// Обрабатывает данные, которую ввёл пользователь
+        /// </summary>
+        /// <param name="num"></param>
+        static void ReadNumber(out double doubleNumber)
         {
-            get { return doubleNumber; }
+            Console.Write("Введите дробное число: ");
+            while (!double.TryParse(Console.ReadLine(), out doubleNumber))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Введены некорректные данные!");
+                Console.WriteLine("Пожалуйста повторите попытку");
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.WriteLine();
+                Console.Write("Введите дробное число: ");
+            }
         }
+
         static void Main(string[] args)
         {
-            try
-            {
+            double doubleNumber;
                 do
                 {
                     Console.WriteLine("Введите дробное число: ");
-                    double doubleNumber = double.Parse(Console.ReadLine());
-                    DoubleSplit ds1 = new DoubleSplit(doubleNumber);
+                    ReadNumber(out doubleNumber);
 
+                    DoubleSplit(doubleNumber);
+                    Fract(doubleNumber);
+
+                    Console.WriteLine("Нажмите ESC , чтобы выйти...");
                 } while (Console.ReadKey().Key != ConsoleKey.Escape);
-                
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Ошибка {ex.Message}");
-            }
         }
     }
 }
