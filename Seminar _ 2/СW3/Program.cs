@@ -1,33 +1,23 @@
 ﻿using System;
+using System.Runtime.ExceptionServices;
 
 namespace СW3
 {
     class Program
     {
-        static void raschet(ref double a, ref double b, ref double c)
+        static string raschet(ref double a, ref double b, ref double c)
         {
             // Задаю доп. переменные
             double D;
             double x1;
             double x2;
-            
+
             // Формула Дискриминанта
             D = Math.Pow(b, 2) - 4 * a * c;
+            x1 = (-b + Math.Sqrt(D)) / (2 * a);
+            x2 = (-b - Math.Sqrt(D)) / (2 * a);
             
-            // Проверяю на действительность корней уравнения
-            if (D > 0 || D == 0)
-            {
-                x1 = (-b + Math.Sqrt(D)) / (2 * a);
-                x2 = (-b - Math.Sqrt(D)) / (2 * a);
-
-                Console.WriteLine("x1= {0}\nx2= {1}", x1.ToString("F3"), x2.ToString("F3"));
-                Console.ReadKey();
-
-            }
-            else
-            {
-                Console.WriteLine("Действительных корней нет");
-            }
+            return (D > 0) ? $"Ответ: первый корень {x1.ToString("F3")} , второй корень {x2.ToString("F3")}" : "Действительных корней нет";
         }
         static void Main(string[] args)
         {
@@ -50,9 +40,8 @@ namespace СW3
                     Console.Write("Введите значение c: ");
                     c = double.Parse(Console.ReadLine());
 
-                    raschet(ref a, ref b, ref c);
+                    Console.WriteLine(raschet(ref a, ref b, ref c));
                     Console.WriteLine("Нажмите ESC чтобы выйти..");
-
                 } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
 
             }

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
+using System.Text;
 
 namespace CW6
 {
@@ -12,9 +14,10 @@ namespace CW6
         /// <param name="b">Процент бюджета пользователя</param>
         static void Rub(ref double a, ref double b)
         {
+            Console.OutputEncoding = Encoding.Unicode;
             double result = (a * (b / 100));
             Console.Write("Выделено на компьютерные игры : ");
-            Console.WriteLine(string.Format(new CultureInfo("ru-RU"), $"{result:c3}"));
+            Console.WriteLine(string.Format(new CultureInfo("ru-RU"), "{0:c3}", result));
     
         }
         /// <summary>
@@ -24,9 +27,10 @@ namespace CW6
         /// <param name="b">Процент бюджета пользователя</param>
         static void Dollar(ref double a, ref double b)
         {
+            Console.OutputEncoding = Encoding.Unicode;
             double result = ((a/72.1) * (b / 100));
             Console.Write("Выделено на компьютерные игры : ");
-            Console.WriteLine(string.Format(new CultureInfo("en-US"), $"{result:c3}"));
+            Console.WriteLine(string.Format(new CultureInfo("en-US"), "{0:c3}", result));
         }
         /// <summary>
         /// Конвертирует значение в евро
@@ -35,9 +39,10 @@ namespace CW6
         /// <param name="b">Процент бюджета пользователя</param>
         static void Euro(ref double a, ref double b)
         {
+            Console.OutputEncoding = Encoding.Unicode;
             double result = ((a / 89.1) * (b / 100));
             Console.Write("Выделено на компьютерные игры : ");
-            Console.WriteLine(string.Format(new CultureInfo("fr-FR"), $"{result:c3}"));
+            Console.WriteLine(string.Format(new CultureInfo("fr-FR"), "{0:c3}", result));
         }
         static void Main(string[] args)
         {
@@ -49,14 +54,14 @@ namespace CW6
                 {
                     Console.WriteLine("Требования: Вычислить и вывести бюджет пользователя и процент на экран сумму в рублях или евро или долларах");
                     
-                    Console.WriteLine("Какую валюту вы будете использовать?");
-                    Console.WriteLine("[0] - рубль, [1]- доллар, [2] - евро");
-                    string currency = Console.ReadLine();
-                    Console.WriteLine("Введите ваш бюджет: ");
+                    Console.WriteLine("\nВведите ваш бюджет: ");
                     budget = double.Parse(Console.ReadLine());
                     Console.WriteLine("Введите процент от бюджета: ");
                     percentBudget = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Какую валюту вы будете использовать?");
 
+                    Console.WriteLine("[0] - рубль, [1]- доллар, [2] - евро");
+                    string currency = Console.ReadLine();
                     switch (currency)
                     {
                         case "0":
@@ -70,6 +75,7 @@ namespace CW6
                             continue;
                         default:
                             Console.WriteLine("Ошибка в поле ввода..");
+                            Console.WriteLine("Нет такого значения как {0}", currency);
                             break;
                     }
 
