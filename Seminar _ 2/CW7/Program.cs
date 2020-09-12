@@ -17,19 +17,26 @@ namespace CW7
         /// Дробная и целая часть
         /// </summary>
         /// <param name="doubleNumber">Дробное число</param>
-        static void DoubleSplit(double doubleNumber)
+        static int DoubleSplit(double doubleNumber, out double f)
         {
-            Console.WriteLine($"Дробная часть : {doubleNumber}");
-            Console.WriteLine($"Целая часть: {(int)Math.Round(doubleNumber)}");
+            int whole = (int)doubleNumber;
+            // Дробная часть
+            f = doubleNumber - whole;
+            // Целая часть
+            int num = (int)Math.Round(doubleNumber);
+            return num;
         }
         /// <summary>
         /// Корень и квадрат числа
         /// </summary>
         /// <param name="doubleNumber"> Дробное число</param>
-        static void Fract(double doubleNumber)
+        static double Fract(double doubleNumber, out double f)
         {
-            Console.WriteLine($"Квадрат числа: {Math.Pow(doubleNumber, 2 ).ToString("F3")}");
-            Console.WriteLine($"Корень числа: {Math.Sqrt(doubleNumber).ToString("F3")}");
+            // Квадратное число
+            f = Math.Pow(doubleNumber, 2 );
+            // Корень числа
+            doubleNumber = Math.Sqrt(doubleNumber);
+            return doubleNumber;
         }
         /// <summary>
         /// Обрабатывает данные, которую ввёл пользователь
@@ -52,13 +59,17 @@ namespace CW7
         static void Main(string[] args)
         {
             double doubleNumber;
+            double f;
                 do
                 {
                     Console.WriteLine("Введите дробное число: ");
                     ReadNumber(out doubleNumber);
 
-                    DoubleSplit(doubleNumber);
-                    Fract(doubleNumber);
+                    DoubleSplit(doubleNumber , out f);
+                    Console.WriteLine($"Дробная часть : {f} Целая часть: {doubleNumber}");
+
+                    Fract(doubleNumber, out f);
+                    Console.WriteLine($"Квадратное число : {f} Корень числа: {doubleNumber}");
 
                     Console.WriteLine("Нажмите ESC , чтобы выйти...");
                 } while (Console.ReadKey().Key != ConsoleKey.Escape);
