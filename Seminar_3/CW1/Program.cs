@@ -14,14 +14,16 @@ namespace CW1
             {
                 do
                 {
-                    int a = 1;
+                    int a = 0;
 
-                    while (a * (a + 1) % 111 != 0)
+                    while (a * (a + 1) % 222 != 0)
                     {
                         a++;
                         int d = (a * (a + 1)) / 2;
+                        
                         Console.WriteLine(d);
                     }
+                    
                     Console.WriteLine("Нажмите на ESC чтобы выйти");
 
                 } while (Console.ReadKey(true).Key != ConsoleKey.Escape);

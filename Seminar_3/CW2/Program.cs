@@ -26,7 +26,7 @@ namespace CW2
                 string inputValue = Console.ReadLine();
 
                 // Проверка на данные (string,char,float)
-                if (!int.TryParse(inputValue, out numValue))
+                if (!int.TryParse(inputValue, out numValue) || numValue < 0)
                 {
                     Console.WriteLine("Неккоректные данные!");
                 }
