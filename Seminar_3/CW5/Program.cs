@@ -27,7 +27,7 @@ namespace CW5
             while (!double.TryParse(Console.ReadLine(), out num))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Введены некорректные данные!");
+                Console.WriteLine("Введены некорректные данные!!");
                 Console.WriteLine("Пожалуйста повторите попытку");
                 Console.ForegroundColor = ConsoleColor.Gray;
                 Console.WriteLine();
