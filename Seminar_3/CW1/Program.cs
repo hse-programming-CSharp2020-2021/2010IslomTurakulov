@@ -10,20 +10,26 @@ namespace CW1
     {
         static void Main(string[] args)
         {
-            do
+            try
             {
-                int a = 1;
-
-                while (a * (a + 1) % 111 != 0)
+                do
                 {
-                    a++;
-                    int d = (a * (a + 1)) / 2;
-                    Console.WriteLine(d);
-                }
-                Console.WriteLine("Нажмите на ESC чтобы выйти");
+                    int a = 1;
 
-            } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
+                    while (a * (a + 1) % 111 != 0)
+                    {
+                        a++;
+                        int d = (a * (a + 1)) / 2;
+                        Console.WriteLine(d);
+                    }
+                    Console.WriteLine("Нажмите на ESC чтобы выйти");
 
+                } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Причина ошибки {ex.Message}");
+            }
         }
     }
 }
