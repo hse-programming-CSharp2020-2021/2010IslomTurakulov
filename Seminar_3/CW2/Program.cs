@@ -25,7 +25,7 @@ namespace CW2
                 Console.Write("Напишите любое число: ");
                 string inputValue = Console.ReadLine();
 
-                // Проверка на данные (string,char,float)
+                // Проверка на данные (string,char,float,double)
                 if (!int.TryParse(inputValue, out numValue) || numValue < 0)
                 {
                     Console.WriteLine("Неккоректные данные!");
