@@ -9,7 +9,9 @@ namespace CW6
             int minXY = Math.Min(x, y);
             int min = minXY > z ? z : minXY;
 
-            Console.WriteLine($"Минимальный номер внутри этажа: {min} ");
+            int floor = min / 100;
+            int auditorium = min % 100;
+            Console.WriteLine($" Минимальный номер внутри этажа: {floor} этаж {auditorium} аудитория ");
         }
         static void Main(string[] args)
         {
@@ -38,11 +40,7 @@ namespace CW6
                     Console.WriteLine("Incorrect input");
                     Console.Write("Введите третий номер этажа и аудитории: ");
                 }
-
-                int floor = (codeNum / 100), floor3 = (codeNum / 100), floor2 = (codeNum / 100);
-                int auditorium1 = (codeNum % 100), auditorium2 = (codeNum2 % 100), auditorium3 = (codeNum3 % 100);
-
-                SortAuditorium(ref auditorium1, ref auditorium2, ref auditorium3);
+                SortAuditorium(ref codeNum, ref codeNum2, ref codeNum3);
 
                 Console.WriteLine("Для выхода нажмите ESC...");
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
