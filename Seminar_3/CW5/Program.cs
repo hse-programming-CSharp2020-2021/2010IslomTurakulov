@@ -41,7 +41,7 @@ namespace CW5
             {
                 Console.Clear();
 
-                Console.WriteLine("Введите значение x: ");
+                Console.Write("Введите значение x: ");
                 // Проверка на данные
                 ReadNumber(out x);
                 // Вызов метода
