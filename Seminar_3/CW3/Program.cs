@@ -22,6 +22,7 @@ namespace CW3
             // используя метод Math.Atan2 () &
 
             // преобразование результата в градус
+
             double radians = Math.Atan2(x,y);
             //double overallRadians = radians * (180 / Math.PI);
 

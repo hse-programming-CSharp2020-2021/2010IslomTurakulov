@@ -23,6 +23,8 @@ namespace CW6
 
             int floor = min / 100;
             int auditorium = min % 100;
+            
+            
             Console.WriteLine($" Минимальный номер внутри этажа: {floor} этаж {auditorium} аудитория ");
         }
         static void Main(string[] args)
