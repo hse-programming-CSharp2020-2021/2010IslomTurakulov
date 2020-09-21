@@ -14,6 +14,8 @@ namespace CW4
         /// <returns></returns>
         public static double G(double x, double y)
         {
+            // Можно было использовать Тернарные операторы 
+
             if (x < y && x > 0)
             {
                 return x + Math.Sin(y);
@@ -51,8 +53,10 @@ namespace CW4
                 Console.Write("Введите значение: ");
                 ReadNumber(out y);
 
+                // Вызов метода и присвоение переменную
                 g = G(x, y);
                 Console.WriteLine(g.ToString("F4"));
+
                 Console.WriteLine("Нажмите ESC , чтобы выйти");
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }
