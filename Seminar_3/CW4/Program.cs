@@ -1,11 +1,17 @@
 ﻿using System;
-using System.Security.Cryptography.X509Certificates;
 using System.Linq;
 
 namespace CW4
 {
+    // Написать метод, вычисляющий значение функции G=F(X,Y)
     class Program
     {
+        /// <summary>
+        /// Метод, вычисляющий значение функции G=F(X,Y)
+        /// </summary>
+        /// <param name="x">Значение функции X</param>
+        /// <param name="y">Значение функции Y</param>
+        /// <returns></returns>
         public static double G(double x, double y)
         {
             if (x < y && x > 0)
@@ -23,6 +29,7 @@ namespace CW4
         }
         static void ReadNumber(out double num)
         {
+            // Валидация данных
             while (!double.TryParse(Console.ReadLine(), out num))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -35,6 +42,7 @@ namespace CW4
         }
         static void Main(string[] args)
         {
+            // Параметры значений
             double x, y, g;
             do
             {
