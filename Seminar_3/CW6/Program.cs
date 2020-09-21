@@ -2,8 +2,20 @@
 
 namespace CW6
 {
+    /*Трехзначным целым числом кодируется номер аудитории в учебном корпусе.
+     * Старшая цифра обозначают номер этажа, а две младшие –  номер аудитории на этаже. 
+     * Из трех аудиторий определить и вывести на экран ту аудиторию, которая имеет минимальный номер внутри этажа.
+     * Если таких аудиторий несколько - вывести любую из них. 
+     */
     class Program
     {
+        /// <summary>
+        /// Сортирует минимальный этаж и аудиторию
+        /// </summary>
+        /// <param name="x">Значение первого ввода</param>
+        /// <param name="y">Значение второго ввода</param>
+        /// <param name="z">Значение третьего ввода</param>
+        
         static void SortAuditorium(ref int x,ref int y,ref int z)
         {
             int minXY = Math.Min(x, y);
@@ -15,6 +27,7 @@ namespace CW6
         }
         static void Main(string[] args)
         {
+            // Задаём переменные для ввода
             int codeNum, codeNum2, codeNum3;
             do
             {
@@ -40,6 +53,8 @@ namespace CW6
                     Console.WriteLine("Incorrect input");
                     Console.Write("Введите третий номер этажа и аудитории: ");
                 }
+                
+                // Вызов метода
                 SortAuditorium(ref codeNum, ref codeNum2, ref codeNum3);
 
                 Console.WriteLine("Для выхода нажмите ESC...");
