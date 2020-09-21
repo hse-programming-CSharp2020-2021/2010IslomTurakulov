@@ -13,31 +13,47 @@ namespace CW2
         /// Выводит число в обратном порядке
         /// </summary>
         /// <param name="a">Число</param>
-        static void ReversedNumber(int a)
+        static int ReversedNumber(int a)
         {
-            Console.WriteLine(a.ToString().Reverse().ToArray());
+            //Console.WriteLine(a.ToString().Reverse().ToArray());
+
+            string se = string.Empty;
+
+            while (a != 0)
+            {
+                se += (a % 10).ToString();
+                a /= 10;
+            }
+
+            return int.Parse(se);
         }
         static void Main(string[] args)
         {
             int numValue;
-            do
+            try
             {
-                Console.Write("Напишите любое число: ");
-                string inputValue = Console.ReadLine();
-
-                // Проверка на данные (string,char,float,double)
-                if (!int.TryParse(inputValue, out numValue) || numValue < 0)
+                do
                 {
-                    Console.WriteLine("Неккоректные данные!");
-                }
-                else
-                {
-                    Console.Write("Обратное число: ");
-                    ReversedNumber(numValue);
-                }
+                    Console.Write("Напишите любое число: ");
+                    string inputValue = Console.ReadLine();
 
-                Console.WriteLine("Нажмите на ESC чтобы выйти..");
-            } while(Console.ReadKey(true).Key != ConsoleKey.Escape);
+                    // Проверка на данные (string,char,float,double)
+                    if (!int.TryParse(inputValue, out numValue) || numValue < 0)
+                    {
+                        Console.WriteLine("Неккоректные данные!");
+                    }
+                    else
+                    {
+                        Console.WriteLine(ReversedNumber(numValue));
+                    }
+
+                    Console.WriteLine("Нажмите на ESC чтобы выйти..");
+                } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine($"Ошибка: {ex.Message}");
+            }
         }
     }
 }
