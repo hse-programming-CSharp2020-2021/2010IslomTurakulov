@@ -24,9 +24,11 @@ namespace CW3
             // преобразование результата в градус
             double radians = Math.Atan2(x,y);
             //double overallRadians = radians * (180 / Math.PI);
-            return (Math.Pow(x,2) + Math.Pow(y,2) <= 4 && -0.5 * Math.PI <= radians  && radians <= Math.PI * 0.25);
+
             // Проверяет 1 и 4 квадрант , от 45 до -90 градусов
             // Если значение входит в G, то выносит True, а если нет , то False
+            // Можно использовать if, else
+            return (Math.Pow(x,2) + Math.Pow(y,2) <= 4 && -0.5 * Math.PI <= radians  && radians <= Math.PI * 0.25);
         }
         static void Main(string[] args)
         {
