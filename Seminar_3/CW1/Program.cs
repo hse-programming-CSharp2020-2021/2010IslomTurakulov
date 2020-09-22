@@ -15,13 +15,18 @@ namespace CW1
                 do
                 {
                     int a = 1;
-                    Console.WriteLine($"Сложение числа {a} \n");
                     while (a * (a + 1) % 222 != 0)
                     {
                         a++;
-                        int d = (a * (a + 1)) / 2;
-                        Console.WriteLine($"Сложение числа {a}");
-                        Console.WriteLine($"Ответ: {d}");
+                        
+                        while (a * (a + 1) % 222 != 0)
+                        {
+                            a++;
+                            int d = (a * (a + 1)) / 2;
+                    
+                            Console.WriteLine($"Ответ: {d}");
+                        }
+                        Console.WriteLine($"Сложение натурального числа: {a}");
                     }
 
                     Console.WriteLine("Нажмите на ESC чтобы выйти");
