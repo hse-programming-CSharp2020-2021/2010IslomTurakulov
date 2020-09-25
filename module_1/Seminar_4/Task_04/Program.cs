@@ -1,30 +1,53 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Task_04
+namespace task4
 {
     class Program
     {
-        static void GetSumOfOddOrEvenDigits(int value, int remainder)
+        public static void Sums(uint number, out uint sumEven, out uint sumOdd)
         {
-            int sum = 0;
-            value = Math.Abs(value);
-            while (value != 0)
+            sumEven = 0; sumOdd = 0; int n = 0;
+            uint digits; uint number2 = number;
+            while (number != 0)
             {
-                int digit = value % 10;
-                sum += digit % 2 == remainder ? value % 10 : 0;
-                value /= 10;
+                number = number / 10;
+                n++;
             }
-            return sum;
+
+            while (number2 != 0)
+            {
+                digits = number2 % 10;
+                if (n % 2 != 0)
+                {
+                    sumEven = sumEven + digits;
+                }
+                else
+                {
+                    sumOdd = sumOdd + digits;
+                }
+                number2 = number2 / 10;
+                n--;
+            }
+            Console.WriteLine("Сумма нечетных разрядов");
+            Console.WriteLine(sumOdd);
+            Console.WriteLine("Сумма четных разрядов");
+            Console.WriteLine(sumEven);
         }
         static void Main(string[] args)
         {
-            uint naturalNumbers;
-            Console.WriteLine("Введите любое натуральное число: ");
-            if (!uint.TryParse(Console.ReadLine(),out naturalNumbers))
+            uint sumEven;
+            uint sumOdd;
+            Console.WriteLine("Введите число");
+            uint number;
+            while (!uint.TryParse(Console.ReadLine(), out number))
+            {
                 Console.WriteLine("Incorrect input");
-            else
-                GetSumOfOddOrEvenDigits()
-
+            }
+            Sums(number, out sumEven, out sumOdd);
         }
     }
 }
