@@ -1,30 +1,58 @@
 ﻿using System;
 
-namespace CW2
+namespace Task09
 {
     class Program
     {
-        static void Main(string[] args)
+        // Метод, валидирующий введенное целочисленное значение.
+        static bool Read(out int x)
         {
+            return (int.TryParse(Console.ReadLine(), out x));
+        }
 
-            int oddNumber, oddSum;
-            oddSum = 0;
-            
+        // Метод, выполняющий поиск среднего арифметического введенных отрицательных чисел.
+        static void FindAverage()
+        {
+            // Переменная, сохраняющая очередное введенное значение.
+            int x;
+
+            // Сумма введенных отрицательных чисел.
+            int sum = 0;
+
+            // Кол-во введенных отрицательных чисел.
+            int amount = 0;
+
+            // Среднее арифметическое.
+            double average;
+
+            Console.WriteLine("Введите целые числа, нажимая Enter после ввода каждого числа.");
+            Console.WriteLine("Чтобы окончить ввод и получить среднее арифметическое отрицательных чисел, нажмите Escape.");
+
+            // Повторение цикла, пока сумма не станет меньше -1000 или пока пользователь не нажмет Escape.
             do
             {
-                if (!int.TryParse(Console.ReadLine(), out oddNumber))
+                if (Read(out x))
                 {
-                    Console.WriteLine("Incorrect input");
-                    return;
+                    if (x < 0)
+                    {
+                        sum += x;
+                        amount++;
+                    }
                 }
                 else
                 {
-                    if (oddNumber % 2 != 0)
-                    {
-                        oddSum = oddSum + oddNumber;
-                    }
+                    Console.WriteLine("Неверный ввод!");
                 }
-            } while (oddNumber != 0);
+            } while (Console.ReadKey(true).Key != ConsoleKey.Escape && sum >= -1000);
+
+            average = (double)sum / amount;
+
+            Console.WriteLine(Environment.NewLine + $"Среднее арифметическое: {average}");
+        }
+
+        static void Main(string[] args)
+        {
+            FindAverage();
         }
     }
 }
