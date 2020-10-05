@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Task_2
 {
@@ -16,22 +17,22 @@ namespace Task_2
                 } while (!int.TryParse(Console.ReadLine(), out numArray) || numArray < 0);
 
                 int[][] array = new int[numArray][];
-                    
+
                 for (int i = 0; i < array.Length; i++)
                 {
                     array[i] = new int[i + 1];
-                    for (int j = 0; j < array[i].Length ; j++)
+                    for (int j = 0; j < array[i].Length; j++)
                     {
-                        array[i][j] = (int)(34 * array[i - 1] - array[i - 2] + 2);
+                        array[i][j] = (i*(i+1))/2;
                     }
                 }
                 for (int i = 0; i < array.Length; i++)
                 {
                     for (int j = 0; j < array[i].Length; j++)
                     {
-                        Console.Write(array[i][j] + "\t");
+                        Console.Write($"{array[i][j]}\t");
                     }
-                    Console.WriteLine("\n\n");
+                    Console.WriteLine("\n");
                 }
                 Console.WriteLine("\nНажмите ESC для выхода..");
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
