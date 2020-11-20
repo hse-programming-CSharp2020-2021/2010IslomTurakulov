@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinearEquation", "LinearEquation\LinearEquation.csproj", "{D1EB8074-BB7D-4FD0-87DA-31FFDD81DB47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Circle", "Circle\Circle.csproj", "{2FD8F96C-CECC-4810-BB57-5F9260EC8209}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1EB8074-BB7D-4FD0-87DA-31FFDD81DB47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1EB8074-BB7D-4FD0-87DA-31FFDD81DB47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1EB8074-BB7D-4FD0-87DA-31FFDD81DB47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1EB8074-BB7D-4FD0-87DA-31FFDD81DB47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FD8F96C-CECC-4810-BB57-5F9260EC8209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FD8F96C-CECC-4810-BB57-5F9260EC8209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FD8F96C-CECC-4810-BB57-5F9260EC8209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FD8F96C-CECC-4810-BB57-5F9260EC8209}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8DB34B44-429D-4181-96B3-762656331B31}
+	EndGlobalSection
+EndGlobal

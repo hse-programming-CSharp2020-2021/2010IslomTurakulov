@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task7", "Task7\Task7.csproj", "{08DE2D69-96A8-4A94-8547-E2EF18651E5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task8", "Task8\Task8.csproj", "{56A63A9F-64AD-43B1-AC5F-A3EC9F69A32B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeomProgression", "GeomProgression\GeomProgression.csproj", "{19F31496-A4BB-49C9-A59E-8295984E1712}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08DE2D69-96A8-4A94-8547-E2EF18651E5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08DE2D69-96A8-4A94-8547-E2EF18651E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08DE2D69-96A8-4A94-8547-E2EF18651E5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08DE2D69-96A8-4A94-8547-E2EF18651E5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56A63A9F-64AD-43B1-AC5F-A3EC9F69A32B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56A63A9F-64AD-43B1-AC5F-A3EC9F69A32B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56A63A9F-64AD-43B1-AC5F-A3EC9F69A32B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56A63A9F-64AD-43B1-AC5F-A3EC9F69A32B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19F31496-A4BB-49C9-A59E-8295984E1712}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19F31496-A4BB-49C9-A59E-8295984E1712}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19F31496-A4BB-49C9-A59E-8295984E1712}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19F31496-A4BB-49C9-A59E-8295984E1712}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A616081-7EFC-4165-A019-E4102F61E858}
+	EndGlobalSection
+EndGlobal
