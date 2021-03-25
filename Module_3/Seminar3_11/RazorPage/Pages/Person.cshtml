@@ -1,0 +1,17 @@
+﻿@page
+@model PersonModel
+@{
+    ViewData["Title"] = "Ввод данных";
+}
+<h2 align="center">@Model.Message</h2>
+<div align="center">
+    <form method="post">
+        <label for="A">A</label><br />
+        <input type="number" name="a" id="a" /><br /><br />
+        <label for="B">B</label><br />
+        <input type="number" name="b" id="b" /><br /><br />
+        <label for="C">C</label><br />
+        <input type="number" name="c" id="c" /><br /><br />
+        <input type="submit" value="Оправить" />
+    </form>
+</div>
